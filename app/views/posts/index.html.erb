@@ -1,28 +1,16 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Timestamp</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.author %></td>
-    <td><%= post.timestamp %></td>
-    <td><%= post.body %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div class="panel clearfix">
+    <h2><%= post.title %></h2>
+    <h6><%= post.author %> | <%= post.timestamp %></h6> <br /><br />
+    <p class="text-justify"><%= post.body %></p> <br />
+    <%= link_to 'Show', post, :class => 'button' %>
+    <%= link_to 'Edit', edit_post_path(post), :class => 'button' %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' %>
+    <%= 'hello' if @auth == true %>
+    <%= 'aww :(' if @auth == false %>
+</div>
 <% end %>
-</table>
 
 <br />
 

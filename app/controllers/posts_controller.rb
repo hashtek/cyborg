@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   private
   def authenticate
 	authenticate_or_request_with_http_basic do |name, password|
-		name == "admin" && password == "secret"
+		if ( name == "admin" && password == "secret" )
+			@auth = true
+		else
+			@auth = false
+		end
+		return @auth
 	end
   end
 
