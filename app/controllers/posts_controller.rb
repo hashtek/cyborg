@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_filter :authenticate, :except => [ :index, :show ]
+  helper_method :markdown
 
   private
   def authenticate
@@ -15,6 +16,13 @@ class PostsController < ApplicationController
   end
 
   public
+  def markdown(text)
+  	renderer = Redcarpet::Render::HTML.new(no_links: false, hard_wrap: true)
+	mkdown = Redcarpet::Markdown.new(renderer, extensions = {})
+	mkdown.render(text)
+  end
+
+
   # GET /posts
   # GET /posts.json
   def index

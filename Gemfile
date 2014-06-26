@@ -26,9 +26,8 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'zurb-foundation', '~> 4.0.0'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-
+  gem 'redcarpet'
   gem 'uglifier', '>= 1.0.3'
 end
 
