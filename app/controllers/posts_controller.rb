@@ -2,20 +2,7 @@ require 'redcarpet'
 
 class PostsController < ApplicationController
 
-  before_filter :authenticate, :except => [ :index, :show ]
   helper_method :markdown
-
-  private
-  def authenticate
-	authenticate_or_request_with_http_basic do |name, password|
-		if ( name == "admin" && password == "secret" )
-			@auth = true
-		else
-			@auth = false
-		end
-		return @auth
-	end
-  end
 
   public
   def markdown(text)
