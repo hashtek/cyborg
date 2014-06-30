@@ -1,4 +1,4 @@
-<nav class="top-bar">
+<nav class="top-bar drop-shadow">
   <ul class="title-area">
     <!-- Title Area -->
     <li class="name">
@@ -14,18 +14,14 @@
     <ul class="right">
       <li class="divider hide-for-small"></li>
       <li>
-        <%= link_to 'Github', 'https://github.com/reInteractive-open' %>
-      </li>
-
-      <li class="divider hide-for-small"></li>
-      <li>
-        <%= link_to 'Twitter', 'https://twitter.com/' %>
-      </li>
-
-      <li class="divider hide-for-small"></li>
-      <li>
-        <%= link_to 'About', '/about' %>
+	<% if user_signed_in? %>
+		<%= link_to(' ' + current_user.email, destroy_user_session_path, :method => :delete) %>
+	<% else %>
+		<%= link_to('Login', new_user_session_path) %>
+	<% end %>
       </li>
     </ul>
   </section>
 </nav>
+
+<br /><br /><br /><br />

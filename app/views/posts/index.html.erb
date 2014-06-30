@@ -1,6 +1,12 @@
 
+<% if user_signed_in? %>
+<div class="panel clearfix post">
+<%= link_to 'New Post', new_post_path, :class => 'button' %>
+</div>
+<% end %>
+
 <% @posts.each do |post| %>
-<div class="panel clearfix">
+<div class="panel clearfix post">
     <h2><%= post.title %></h2>
     <h6><%= post.author %> | <%= post.timestamp %></h6> <br /><br />
     <%= simple_format(markdown(post.body)) %>
@@ -10,4 +16,3 @@
 </div>
 <% end %>
 
-<%= link_to 'New Post', new_post_path if user_signed_in? %>
