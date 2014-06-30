@@ -9,10 +9,11 @@
 <div class="panel clearfix post">
     <h2><%= post.title %></h2>
     <h6><%= post.author %> | <%= post.timestamp %></h6> <br /><br />
-    <%= simple_format(markdown(post.body)) %>
-    <%= link_to 'Show', post, :class => 'button' %>
-    <%= link_to 'Edit', edit_post_path(post), :class => 'button' if user_signed_in? %>
-    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' if user_signed_in? %>
+    <% content = truncate(post.body, :length => 300, :separator => ' ') %>
+    <%= simple_format(markdown(content)) %>
+    <%= link_to '(Read more)', post %>
+    <%= link_to ' | Edit', edit_post_path(post)  if user_signed_in? %>
+    <%= link_to ' | Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %>
 </div>
 <% end %>
 

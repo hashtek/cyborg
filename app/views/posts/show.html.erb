@@ -1,25 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="panel clearfix post">
+    <h2><%= @post.title %></h2>
+    <h6><%= @post.author %> | <%= @post.timestamp %></h6> <br /><br />
+    <%= simple_format(markdown(@post.body)) %>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%= @post.author %>
-</p>
-
-<p>
-  <b>Timestamp:</b>
-  <%= @post.timestamp %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) if user_signed_in? %> 
-<%= link_to 'Back', posts_path %>
+<% if user_signed_in? %>
+<div class="panel clearfix post">
+	<p id="notice"><%= notice %></p>
+	<%= link_to 'Edit', edit_post_path(@post), :class => 'button' if user_signed_in? %>
+	<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' if user_signed_in? %>
+</div>
+<% end %>
