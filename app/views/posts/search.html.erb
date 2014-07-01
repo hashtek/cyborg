@@ -1,9 +1,4 @@
-
-<% if user_signed_in? %>
-<div class="panel clearfix post">
-<%= link_to 'New Post', new_post_path, :class => 'button' %>
-</div>
-<% end %>
+<h2 class="light">Search Results</h2>
 
 <% @posts.each do |post| %>
 <div class="panel clearfix post">
@@ -14,7 +9,6 @@
     <%= link_to '(Read more)', post %>
     <%= link_to ' | Edit', edit_post_path(post)  if user_signed_in? %>
     <%= link_to ' | Delete post', post, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %>
-    <hr />
 </div>
 <% end %>
 

@@ -1,4 +1,5 @@
 <%= form_for(@post) do |f| %>
+<div class="panel clearfix post">
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,23 +12,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :timestamp %>
-    <%= f.text_field :timestamp %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.text_field :title, :placeholder => 'Title', :required => 'true' %>
+  <%= f.text_field :author, :readonly => true, :value => @post.author %>
+  <%= f.text_field :timestamp, :required => 'true', :placeholder => 'Timestamp' %>
+  <%= f.text_area :body, :style => 'height: 450px', :placeholder => 'Blog post content ...', :required => 'true' %>
+  <%= f.submit %>
+</div>
 <% end %>

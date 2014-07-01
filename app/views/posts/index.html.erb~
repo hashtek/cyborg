@@ -10,7 +10,7 @@
     %>
     <%= link_to 'Show', post, :class => 'button' %>
     <%= link_to 'Edit', edit_post_path(post), :class => 'button' %>
-    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' %>
+    <%= link_to 'Delete post', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' %>
 </div>
 <% end %>
 

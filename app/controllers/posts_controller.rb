@@ -24,6 +24,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def error
+    @message = "Page not found"
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def search
+    @posts = Post.where("title LIKE '%#{params[:query]}%'")
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -39,7 +53,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-
+    @post.author = current_user.email
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }

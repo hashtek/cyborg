@@ -17,12 +17,12 @@
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Roboto Slab", serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
-// $font-smoothing: antialiased;
+$font-smoothing: antialiased;
 
 // We use these to control text direction settings
 // $text-direction: ltr;
@@ -38,7 +38,7 @@
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
-// $shiny-edge-size: 0 1px 0;
+$shiny-edge-size: 0 0px 0;
 // $shiny-edge-color: rgba(#fff, .5);
 // $shiny-edge-active-color: rgba(#000, .2);
 
@@ -66,7 +66,7 @@
 //
 
 // $row-width: 62.5em;
-// $column-gutter: 1.875em;
+$column-gutter: 1em;
 // $total-columns: 12;
 
 //
@@ -85,7 +85,7 @@
 //
 
 // We use these to control header font styles
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: "Roboto Slab", serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -114,7 +114,7 @@
 // $small-font-color: lighten($header-font-color, 30%);
 
 // We use these to style paragraphs
-// $paragraph-font-family: inherit;
+$paragraph-font-family: inherit;
 // $paragraph-font-weight: normal;
 // $paragraph-font-size: 1em;
 // $paragraph-line-height: 1.6;
@@ -125,7 +125,7 @@
 
 // We use these to style <code> tags
 // $code-color: darken($alert-color, 15%);
-// $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
+$code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
 // $code-font-weight: bold;
 
 // We use these to style anchors
@@ -193,7 +193,7 @@
 // $label-font-weight: 500;
 // $label-font-color: lighten(#000, 30%);
 // $label-bottom-margin: emCalc(3px);
-// $input-font-family: inherit;
+$input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: emCalc(14px);
 // $input-bg-color: #fff;
@@ -245,7 +245,7 @@
 // $button-margin-bottom: emCalc(20px);
 
 // We use these to control button text styles.
-// $button-font-family: inherit;
+$button-font-family: inherit;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
 // $button-font-med: emCalc(16px);
