@@ -1,10 +1,4 @@
 
-<% if user_signed_in? %>
-<div class="panel clearfix post">
-<%= link_to 'New Post', new_post_path, :class => 'button' %>
-</div>
-<% end %>
-
 <% @posts.each do |post| %>
 <div class="panel clearfix post">
     <h2><%= link_to post.title, post %></h2>
