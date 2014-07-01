@@ -1,14 +1,3 @@
 <h2 class="light">Search Results</h2>
 
-<% @posts.each do |post| %>
-<div class="panel clearfix post">
-    <h2><%= link_to post.title, post %></h2>
-    <h6><%= post.author %> | <%= post.timestamp %></h6> <br /><br />
-    <% content = truncate(post.body, :length => 300, :separator => ' ') %>
-    <%= simple_format(markdown(content)) %>
-    <%= link_to '(Read more)', post %>
-    <%= link_to ' | Edit', edit_post_path(post)  if user_signed_in? %>
-    <%= link_to ' | Delete post', post, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %>
-</div>
-<% end %>
-
+<%= render 'listposts' %>
