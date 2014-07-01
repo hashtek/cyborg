@@ -3,6 +3,7 @@ RailsApp::Application.routes.draw do
   devise_for :users
 
   post '/posts/search', to: 'posts#search'
+  get  '/posts/archives', to: 'posts#archives'
 
   root :to => 'posts#index'
   resources :posts

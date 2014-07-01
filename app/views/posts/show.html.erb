@@ -1,6 +1,6 @@
 <div class="panel clearfix post">
     <h2><%= @post.title %></h2>
-    <h6><%= @post.author %> | <%= @post.timestamp %></h6> <br /><br />
+    <h6><%= @post.author %> | <%= @post.timestamp.strftime("%d %b %Y") %></h6> <br /><br />
     <%= simple_format(markdown(@post.body)) %>
 </div>
 

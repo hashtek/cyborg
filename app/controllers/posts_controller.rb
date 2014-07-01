@@ -38,6 +38,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def archives
+    @posts = Post.where("timestamp LIKE '%#{params[:yymm]}%'")
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show

@@ -14,8 +14,10 @@
 
   <%= f.text_field :title, :placeholder => 'Title', :required => 'true' %>
   <%= f.text_field :author, :readonly => true, :value => @post.author %>
-  <%= f.text_field :timestamp, :required => 'true', :placeholder => 'Timestamp' %>
+  Datestamp  <%= date_select :post, :timestamp, order: [:year, :month, :day] %>
+  <hr />
   <%= f.text_area :body, :style => 'height: 450px', :placeholder => 'Blog post content ...', :required => 'true' %>
   <%= f.submit %>
 </div>
 <% end %>
+

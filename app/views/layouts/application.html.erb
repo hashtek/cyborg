@@ -8,6 +8,7 @@
 
   <meta charset="utf-8" />
   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
 
   <!-- Uncomment to make IE8 render like IE7 -->
   <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
@@ -38,14 +39,26 @@
       <div class="large-4 columns">
 
         <div class="panel clearfix post">
+	  <h5 class="subheader bold">Search</h5>
+	  <hr />
 	  <form action="/posts/search" method="post">
             <input type="text" placeholder="Search titles" name="query" required="true" />
-            <input type="submit" value="Search" class="small button" />
+            <input type="submit" value="Go" class="small button" />
           </form>
 	</div>
 
 	<div class="panel clearfix post">
-		Sidebar test
+	<h5 class="subheader bold">browse archives</h5>
+	<hr />
+	<%
+		xposts = Post.order("date(timestamp) DESC").group("date(timestamp)")
+		xposts.each do |post|
+			linkname = post.timestamp.strftime("%Y / %B")
+			linkurl  = '/posts/archives?yymm=' + post.timestamp.strftime("%Y-%m")
+	%>
+	<h6 class="subheader"><%= link_to linkname, linkurl %></h6>
+	<% end %>
+
 	</div>
       </div>
     </div>

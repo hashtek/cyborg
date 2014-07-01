@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :author
-      t.string :timestamp
+      t.date :timestamp
       t.text :body
 
       t.timestamps

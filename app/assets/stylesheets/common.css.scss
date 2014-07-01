@@ -53,3 +53,14 @@ body {
 .light {
 	color: #ddd;
 }
+
+#post_timestamp_1i, #post_timestamp_2i, #post_timestamp_3i {
+	display: inline;
+	width: auto;
+	float: right;
+}
+
+.bold {
+	font-family: 'Oswald', sans;
+	text-transform: uppercase;
+}
