@@ -1,3 +1,4 @@
+<div class="sticky">
 <nav class="top-bar drop-shadow">
   <ul class="title-area">
     <!-- Title Area -->
@@ -6,20 +7,27 @@
         <%= link_to '/dev/blog', root_path, :class => 'bold' %>
       </h1>
     </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>MENU</span></a></li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
   </ul>
   <section class="top-bar-section">
     <ul class="right">
       <li class="divider hide-for-small"></li>
       <li>
+        <a href="#" data-dropdown="drop1"  data-options="is_hover:true"> <% if user_signed_in? %>
+		Welcome, <%= current_user.email %>
+	<% else %>
+		Login
+	<% end %></a>
+	<div class="f-dropdown content" id="drop1" data-dropdown-content>
 	<% if user_signed_in? %>
 		<%= link_to(' ' + current_user.email, destroy_user_session_path, :method => :delete) %>
 	<% else %>
 		<%= link_to('Login', new_user_session_path) %>
 	<% end %>
+	</div>
       </li>
     </ul>
   </section>
 </nav>
-
-<br /><br /><br /><br />
+</div>
+<br />

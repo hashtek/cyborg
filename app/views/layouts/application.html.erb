@@ -52,12 +52,15 @@
 	<hr />
 	<%
 		xposts = Post.order("date(timestamp) DESC").group("date(timestamp)")
+		list = Hash.new
 		xposts.each do |post|
 			linkname = post.timestamp.strftime("%Y / %B")
 			linkurl  = '/posts/archives?yymm=' + post.timestamp.strftime("%Y-%m")
-	%>
-	<h6 class="subheader"><%= link_to linkname, linkurl %></h6>
-	<% end %>
+			list[linkname] = linkurl
+		end
+		list.each do |value| %>
+			<h6 class="subheader"><%= link_to value[0], value[1] %></h6>
+	<% 	end %>
 
 	</div>
       </div>

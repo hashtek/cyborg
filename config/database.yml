@@ -27,7 +27,14 @@ defaults: &defaults
   <<: *<%= ENV['RAILS_DB'] || "sqlite" %>
 
 development:
-  <<: *defaults
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: cyborg_db
+  pool: 5
+  username: root
+  password: xyzzy321
+  host: localhost
 
 test: &test
   <<: *defaults
