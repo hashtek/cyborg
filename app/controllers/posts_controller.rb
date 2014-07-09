@@ -45,6 +45,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def tagsearch
+    @posts = Post.where("tags LIKE '%#{params[:q]}%'")
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show

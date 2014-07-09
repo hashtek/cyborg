@@ -63,6 +63,23 @@
 	<% 	end %>
 
 	</div>
+
+	<div class="panel clearfix post" style="text-align: justify">
+	<h5 class="subheader bold">view posts by tag</h5>
+	<hr />
+	<%
+		tagcloud = Hash.new
+		Post.all.each do |post|
+			post.tags.split(' ').each do |keyword|
+				tagcloud[keyword.downcase]=1
+			end
+		end
+
+		tagcloud.sort.each do |value| %>
+			<%= link_to value[0], "/posts/tagsearch?q="+value[0]  %>
+	<% 	end %>
+
+	</div>
       </div>
     </div>
 

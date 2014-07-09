@@ -4,6 +4,7 @@ RailsApp::Application.routes.draw do
 
   post '/posts/search', to: 'posts#search'
   get  '/posts/archives', to: 'posts#archives'
+  get  '/posts/tagsearch', to: 'posts#tagsearch'
 
   root :to => 'posts#index'
   resources :posts

@@ -17,6 +17,7 @@
   Datestamp  <%= date_select :post, :timestamp, order: [:year, :month, :day] %>
   <hr />
   <%= f.text_area :body, :style => 'height: 450px', :placeholder => 'Blog post content ...', :required => 'true' %>
+  <%= f.text_field :tags, :placeholder => 'Enter blog post tags here' %>
   <%= f.submit %>
 </div>
 <% end %>

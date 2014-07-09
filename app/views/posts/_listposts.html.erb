@@ -5,10 +5,13 @@
     <h6><%= post.author %> | <%= post.timestamp.strftime("%d %b %Y") %></h6> <br /><br />
     <% content = truncate(post.body, :length => 300, :separator => ' ') %>
     <%= simple_format(markdown(content)) %>
+    <hr />
     <%= link_to '(Read more)', post %>
     <%= link_to ' | Edit', edit_post_path(post)  if user_signed_in? %>
     <%= link_to ' | Delete post', post, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %>
-    <hr />
+    <% post.tags.split(' ').sort.reverse.each do |word| %>
+    &nbsp;<%= link_to word, "/posts/tagsearch?q="+word, :class => 'tags' %></span>
+    <% end %>
 </div>
 <% end %>
 

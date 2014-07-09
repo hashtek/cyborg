@@ -65,3 +65,18 @@ body {
 	font-family: 'Oswald', sans;
 	text-transform: uppercase;
 }
+
+.tags, .tags:hover, .tags:active {
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-style: italic;
+	font-size: 0.9em;
+	float: right;
+	color: #fff;
+	background-color: #2BA6CB;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin-left: 2px;
+}
