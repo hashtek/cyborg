@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order('timestamp DESC')
+    @posts = Post.order('timestamp DESC').paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,21 +32,21 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where("title LIKE '%#{params[:query]}%'")
+    @posts = Post.where("title LIKE '%#{params[:query]}%'").paginate(:page => params[:page])
     respond_to do |format|
       format.html
     end
   end
 
   def archives
-    @posts = Post.where("timestamp LIKE '%#{params[:yymm]}%'")
+    @posts = Post.where("timestamp LIKE '%#{params[:yymm]}%'").paginate(:page => params[:page])
     respond_to do |format|
       format.html
     end
   end
 
   def tagsearch
-    @posts = Post.where("tags LIKE '%#{params[:q]}%'")
+    @posts = Post.where("tags LIKE '%#{params[:q]}%'").paginate(:page => params[:page])
     respond_to do |format|
       format.html
     end

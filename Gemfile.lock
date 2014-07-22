@@ -40,6 +40,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    daemons (1.1.9)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -47,6 +48,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (2.0.2)
     hike (1.2.3)
     i18n (0.6.9)
@@ -107,6 +109,10 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.14.6)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -119,6 +125,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    will_paginate (3.0.7)
     zurb-foundation (4.0.9)
       sass (>= 3.2.0)
 
@@ -138,6 +145,8 @@ DEPENDENCIES
   sass-rails
   sqlite3
   therubyracer
+  thin
   thor (= 0.14.6)
   uglifier (>= 1.0.3)
+  will_paginate (~> 3.0)
   zurb-foundation (~> 4.0.0)

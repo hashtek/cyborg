@@ -70,8 +70,10 @@
 	<%
 		tagcloud = Hash.new
 		Post.all.each do |post|
-			post.tags.split(' ').each do |keyword|
-				tagcloud[keyword.downcase]=1
+			if post.tags != nil
+				post.tags.split(' ').each do |keyword|
+					tagcloud[keyword.downcase]=1
+				end
 			end
 		end
 

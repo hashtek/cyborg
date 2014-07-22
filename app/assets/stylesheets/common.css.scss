@@ -80,3 +80,17 @@ body {
 	padding-bottom: 0.2em;
 	margin-left: 2px;
 }
+
+.simple-pagination {
+	text-align: center;
+	padding: 1em;
+	cursor: default;
+}
+
+.simple-pagination .previous_page {
+	float: left;
+}
+
+.simple-pagination .next_page {
+	float: right;
+}

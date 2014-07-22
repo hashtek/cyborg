@@ -4,6 +4,8 @@ gem 'rails', '~> 3.2.16'
 gem 'rack', '~> 1.4.5'
 gem 'devise', '3.2.2'
 
+gem 'will_paginate', '~> 3.0'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -16,6 +18,7 @@ group :production, :postgresql do
 end
 
 group :development, :test do
+  gem 'thin'
   gem 'sqlite3'
   gem 'minitest'
   gem 'thor', '= 0.14.6'

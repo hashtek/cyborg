@@ -9,9 +9,12 @@
     <%= link_to '(Read more)', post %>
     <%= link_to ' | Edit', edit_post_path(post)  if user_signed_in? %>
     <%= link_to ' | Delete post', post, method: :delete, data: { confirm: 'Are you sure?' } if user_signed_in? %>
+    <% if post.tags != nil %>
     <% post.tags.split(' ').sort.reverse.each do |word| %>
     &nbsp;<%= link_to word, "/posts/tagsearch?q="+word, :class => 'tags' %></span>
+    <% end %>
     <% end %>
 </div>
 <% end %>
 
+<%= will_paginate @posts, :page_links => false, :class => 'simple-pagination' %>
